@@ -1,0 +1,20 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-argo-applications
+  namespace: default
+  labels:
+    Product: DevOps
+    ProductComponents: cicd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps
+    repoURL: https://github.com/SergeyDz/argocd-education
+    targetRevision: main
+    directory:
+      recurse: true
