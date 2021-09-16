@@ -3,13 +3,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: devops-argo-applications
-  namespace: default
+  namespace: argocd
   labels:
     Product: DevOps
     ProductComponents: cicd
 spec:
   destination:
-    namespace: default
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: default
   source:
