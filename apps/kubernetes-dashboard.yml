@@ -11,9 +11,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: kubernetes/dashboard/v2.3.1/aio/deploy/recommended.yaml
-    repoURL: https://raw.githubusercontent.com
-    targetRevision: master
+    path: ''
+    repoURL: 'https://kubernetes.github.io/dashboard/'
+    targetRevision: 5.0.0
+    chart: kubernetes-dashboard
   syncPolicy:
     automated: 
       prune: true
