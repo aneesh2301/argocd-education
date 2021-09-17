@@ -11,10 +11,12 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ''
-    repoURL: 'https://kubernetes-sigs.github.io/metrics-server/'
-    targetRevision: 3.5.0
-    chart: metrics-server
+    path: helm/metrics-server-custom
+    repoURL: https://github.com/SergeyDz/argocd-education
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
   syncPolicy:
     automated: 
       prune: true
