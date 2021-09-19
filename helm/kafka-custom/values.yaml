@@ -1,0 +1,2 @@
+kafka:
+  heapOpts: -Xmx512m -Xms512m

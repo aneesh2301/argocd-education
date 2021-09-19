@@ -11,10 +11,12 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ''
-    repoURL: 'https://charts.bitnami.com/bitnami'
-    targetRevision: 14.1.0
-    chart: kafka
+    path: helm/kafka-custom
+    repoURL: https://github.com/SergeyDz/argocd-education
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
   syncPolicy:
     automated: 
       prune: true
