@@ -13,7 +13,7 @@ spec:
   source:
     path: argocd-all-in-one.yml
     repoURL: https://github.com/SergeyDz/argocd-education
-    targetRevision: master
+    targetRevision: HEAD
   syncPolicy:
     automated: 
       prune: true
