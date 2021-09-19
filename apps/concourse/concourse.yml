@@ -11,13 +11,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ''
     repoURL: 'https://concourse-charts.storage.googleapis.com/'
     targetRevision: 16.0.0
     chart: concourse
     helm:
-      valueFiles:
-      - values.yaml
       parameters:
       - name: concourse.web.bindPort
         value: 8090
