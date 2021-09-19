@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: devops-argo-applications
+  name: argo-applications-root
   namespace: argocd
   labels:
     Product: DevOps
