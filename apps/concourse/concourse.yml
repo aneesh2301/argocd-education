@@ -16,11 +16,11 @@ spec:
     chart: concourse
     helm:
       parameters:
-      - name: concourse.web.bindPort
+      - name: web.bindPort
         value: "8090"
-      - name: concourse.web.service.api.type
+      - name: web.service.api.type
         value: "LoadBalancer"
-      - name: concourse.web.service.api.loadBalancerIP
+      - name: web.service.api.loadBalancerIP
         value: "localhost"
   syncPolicy:
     automated: 
