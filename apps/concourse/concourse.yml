@@ -20,6 +20,8 @@ spec:
         value: "8090"
       - name: concourse.web.service.api.type
         value: "LoadBalancer"
+      - name: concourse.web.service.api.loadBalancerIP
+        value: "localhost"
   syncPolicy:
     automated: 
       prune: true
