@@ -19,7 +19,7 @@ spec:
       - name: concourse.web.bindPort
         value: "8090"
       - name: concourse.web.service.api.type
-        value: LoadBalancer
+        value: "LoadBalancer"
   syncPolicy:
     automated: 
       prune: true
