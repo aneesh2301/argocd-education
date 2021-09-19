@@ -1,0 +1,10 @@
+kibana: 
+  minimumMasterNodes: 1
+  replicas: 1
+  resources:
+    limits:
+      cpu: 200m
+      memory: 0.5G
+    requests:
+      cpu: 200m
+      memory: 0.5G
