@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: concourse
+  namespace: ci
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: concourse
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: ''
+    repoURL: 'https://concourse-charts.storage.googleapis.com/'
+    targetRevision: 16.0.0
+    chart: concourse
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
