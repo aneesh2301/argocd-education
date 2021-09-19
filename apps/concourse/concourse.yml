@@ -15,6 +15,14 @@ spec:
     repoURL: 'https://concourse-charts.storage.googleapis.com/'
     targetRevision: 16.0.0
     chart: concourse
+    helm:
+      valueFiles:
+      - values.yaml
+      parameters:
+      - name: concourse.web.bindPort
+        value: 8090
+      - name: concourse.web.service.api.type
+        value: LoadBalancer
   syncPolicy:
     automated: 
       prune: true
