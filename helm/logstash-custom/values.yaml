@@ -1,0 +1,13 @@
+logstash: 
+  replicas: 1
+  resources:
+    limits:
+      cpu: 500m
+      memory: .5G
+    requests:
+      cpu: 200m
+      memory: .2G
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 0.5G
