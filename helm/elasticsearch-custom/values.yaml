@@ -3,12 +3,12 @@ elasticsearch:
   replicas: 1
   resources:
     limits:
-      cpu: 200m
-      memory: 0.5G
+      cpu: 500m
+      memory: 1G
     requests:
       cpu: 200m
       memory: 0.5G
   volumeClaimTemplate:
     resources:
       requests:
-        storage: 0.1G
+        storage: 0.5G
