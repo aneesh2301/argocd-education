@@ -16,7 +16,7 @@ spec:
     chart: concourse
     helm:
       parameters:
-      - name: web.bindPort
+      - name: concourse.web.bindPort
         value: "8090"
       - name: web.service.api.type
         value: "LoadBalancer"
