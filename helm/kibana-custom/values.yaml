@@ -1,4 +1,6 @@
 kibana: 
+  service:
+    type: LoadBalancer
   minimumMasterNodes: 1
   replicas: 1
   resources:
