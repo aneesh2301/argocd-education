@@ -1,11 +1,5 @@
 kube-prometheus-stack:
     prometheus-node-exporter:
         hostRootFsMount: false
-    alertmanager:
-        service:
-            type: LoadBalancer
-    prometheus:
-        service:
-            type: LoadBalancer
     grafana:
         adminPassword: password
