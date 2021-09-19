@@ -1,0 +1,13 @@
+filebeat: 
+  replicas: 1
+  resources:
+    limits:
+      cpu: 500m
+      memory: 1G
+    requests:
+      cpu: 200m
+      memory: .5G
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 0.5G
