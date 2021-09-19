@@ -1,9 +1,11 @@
 logstash: 
+  logstashJavaOpts:
+    -Xmx200m -Xms200m
   replicas: 1
   resources:
     limits:
       cpu: 500m
-      memory: .5G
+      memory: .3G
     requests:
       cpu: 200m
       memory: .2G
