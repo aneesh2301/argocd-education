@@ -1,0 +1,14 @@
+elasticsearch: 
+  minimumMasterNodes: 1
+  replicas: 1
+  resources:
+    limits:
+      cpu: 200m
+      memory: 0.
+    requests:
+      cpu: 200m
+      memory: 0.5G
+  volumeClaimTemplate:
+    resources:
+      requests:
+        storage: 0.1G
