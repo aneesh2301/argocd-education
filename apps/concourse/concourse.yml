@@ -14,14 +14,14 @@ spec:
     repoURL: 'https://concourse-charts.storage.googleapis.com/'
     targetRevision: 16.0.0
     chart: concourse
-    # helm:
-    #   parameters:
-    #   - name: concourse.web.bindPort
-    #     value: "8090"
-    #   - name: web.service.api.type
-    #     value: "LoadBalancer"
-    #   - name: web.service.api.loadBalancerIP
-    #     value: "localhost"
+    helm:
+      parameters:
+      - name: concourse.web.bindPort
+        value: "8090"
+      - name: web.service.api.type
+        value: "LoadBalancer"
+      - name: web.service.api.loadBalancerIP
+        value: "localhost"
   syncPolicy:
     automated: 
       prune: true
