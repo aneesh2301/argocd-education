@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: .
+    path: apps
     repoURL: https://github.com/SergeyDz/argocd-education
     targetRevision: HEAD
     directory:
