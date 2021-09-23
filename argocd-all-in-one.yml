@@ -3814,13 +3814,4 @@ spec:
       app.kubernetes.io/name: argocd-server
   policyTypes:
   - Ingress
----
-apiVersion: v1
-data:
-  password: cGFzc3dvcmQ=
-kind: Secret
-metadata:
-  name: argocd-initial-admin-secret
-type: Opaque
-
 
