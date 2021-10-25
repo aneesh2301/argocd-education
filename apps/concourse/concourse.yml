@@ -23,8 +23,5 @@ spec:
       - name: web.service.api.loadBalancerIP
         value: "localhost"
   syncPolicy:
-    automated: 
-      prune: true
-      selfHeal: true
     syncOptions: 
       - CreateNamespace=true
