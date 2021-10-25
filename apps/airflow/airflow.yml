@@ -8,8 +8,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://airflow.apache.org'
-    targetRevision: 1.2.0
+    repoURL: 'https://airflow-helm.github.io/charts'
+    targetRevision: 8.5.2
     helm:
       valueFiles:
         - values.yaml
