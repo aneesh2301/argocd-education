@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka
+  name: airflow
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: kafka
-    server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm/kafka-custom
-    repoURL: https://github.com/SergeyDz/argocd-education
-    targetRevision: HEAD
+    repoURL: 'https://airflow-helm.github.io/charts'
+    targetRevision: 8.5.2
     helm:
       valueFiles:
-      - values.yaml
+        - values.yaml
+    chart: airflow
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: airflow
   syncPolicy:
-    syncOptions: 
+    syncOptions:
       - CreateNamespace=true
