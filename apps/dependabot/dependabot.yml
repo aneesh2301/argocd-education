@@ -19,7 +19,7 @@ spec:
         - values.yaml
       parameters:
         - name: credentials.gitlab_access_token
-          value: '123'
+          value: 'abc'
   syncPolicy:
     automated: 
       prune: true
