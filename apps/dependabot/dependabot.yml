@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dependabot
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: gitlab
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: 'https://dependabot-gitlab.gitlab.io/chart'
+    targetRevision: 0.2.1
+    chart: dependabot-gitlab
+    helm:
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: credentials.gitlab_access_token
+          value: 'abc'
+  syncPolicy:
+    syncOptions: 
+      - CreateNamespace=true
