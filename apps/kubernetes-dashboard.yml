@@ -16,5 +16,6 @@ spec:
     targetRevision: 5.0.0
     chart: kubernetes-dashboard
   syncPolicy:
+    automated: {}
     syncOptions: 
       - CreateNamespace=true

@@ -15,5 +15,6 @@ spec:
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: master
   syncPolicy:
+    automated: {}
     syncOptions: 
       - CreateNamespace=true
