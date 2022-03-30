@@ -1,4 +1,5 @@
 ## https://github.com/ansible/awx-operator
+## kubectl get secret awx-demo-admin-password -o jsonpath="{.data.password}" | base64 --decode
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
