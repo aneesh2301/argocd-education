@@ -21,6 +21,6 @@ spec:
         - name: credentials.gitlab_access_token
           value: 'abc'
   syncPolicy:
-    automated: {}
+    # automated: {}
     syncOptions: 
       - CreateNamespace=true

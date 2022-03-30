@@ -18,6 +18,6 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: airflow
   syncPolicy:
-    automated: {}
+    # automated: {}
     syncOptions:
       - CreateNamespace=true

@@ -11,13 +11,11 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: 'https://adwerx.github.io/charts'
-    targetRevision: 3.4.0
-    chart: awx
-    helm:
-      valueFiles:
-        - values.yaml
+    path: kustomize/awx
+    repoURL: https://github.com/SergeyDz/argocd-education
+    targetRevision: HEAD
+
   syncPolicy:
-    automated: {}
+    # automated: {}
     syncOptions: 
       - CreateNamespace=true

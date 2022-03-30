@@ -18,6 +18,6 @@ spec:
       valueFiles:
         - values.yaml
   syncPolicy:
-    automated: {}
+    # automated: {}
     syncOptions: 
       - CreateNamespace=true

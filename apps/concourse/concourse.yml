@@ -23,6 +23,6 @@ spec:
       - name: web.service.api.loadBalancerIP
         value: "localhost"
   syncPolicy:
-    automated: {}
+    # automated: {}
     syncOptions: 
       - CreateNamespace=true
