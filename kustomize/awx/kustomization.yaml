@@ -6,6 +6,8 @@ resources:
   # Find the latest tag here: https://github.com/ansible/awx-operator/releases
   - github.com/ansible/awx-operator/config/default?ref=0.19.0
   - awx-demo.yaml
+patches:
+  - path: patch.yaml
 
 # Set the image tags to match the git version from above
 images:
