@@ -6,24 +6,24 @@ metadata:
 spec:
   service_type: nodeport
 
-  web_resource_requirements:
-    requests:
-      cpu: 200m
-      memory: 1Gi
-    limits:
-      cpu: 200m
-      memory: 1Gi
-  task_resource_requirements:
-    requests:
-      cpu: 200m
-      memory: 1Gi
-    limits:
-      cpu: 200m
-      memory: 1Gi
-  ee_resource_requirements:
-    requests:
-      cpu: 500m
-      memory: 1Gi
-    limits:
-      cpu: 500m
-      memory: 1Gi
+  # web_resource_requirements:
+  #   requests:
+  #     cpu: 200m
+  #     memory: 1Gi
+  #   limits:
+  #     cpu: 200m
+  #     memory: 1Gi
+  # task_resource_requirements:
+  #   requests:
+  #     cpu: 200m
+  #     memory: 1Gi
+  #   limits:
+  #     cpu: 200m
+  #     memory: 1Gi
+  # ee_resource_requirements:
+  #   requests:
+  #     cpu: 500m
+  #     memory: 1Gi
+  #   limits:
+  #     cpu: 500m
+  #     memory: 1Gi
