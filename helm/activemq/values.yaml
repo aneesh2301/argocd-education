@@ -1,0 +1,4 @@
+artemis: 
+  image: 
+    repository: hello-docker
+    tag: latest
