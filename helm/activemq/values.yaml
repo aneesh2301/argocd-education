@@ -1,4 +1,4 @@
 artemis: 
   image: 
-    repository: hello-docker
+    repository: vromero/activemq-artemis
     tag: latest
