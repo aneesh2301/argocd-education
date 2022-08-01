@@ -8,3 +8,5 @@ jenkins:
       - "git:4.11.3"
       - "configuration-as-code:1429.v09b_044a_c93de"
       - "artifactory:3.17.0"
+      - "blueocean:1.25.5"
+      - "build-pipeline-plugin:1.5.8"
