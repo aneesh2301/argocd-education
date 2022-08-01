@@ -11,3 +11,4 @@ jenkins:
       - "blueocean:1.25.5"
       - "build-pipeline-plugin:1.5.8"
       - "pipeline-maven:1161.v89a_7dcec5d31"
+      - "maven-plugin:3.19"
