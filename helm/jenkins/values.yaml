@@ -14,3 +14,4 @@ jenkins:
       - "pipeline-maven:1161.v89a_7dcec5d31"
       - "maven-plugin:3.19"
       - "github:1.34.5"
+      - "htmlpublisher:1.30"
