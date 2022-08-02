@@ -16,3 +16,4 @@ jenkins:
       - "github:1.34.5"
       - "htmlpublisher:1.30"
       - "sonar:2.14"
+      - "pipeline-utility-steps:2.13.0"
