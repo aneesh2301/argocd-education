@@ -17,3 +17,4 @@ jenkins:
       - "htmlpublisher:1.30"
       - "sonar:2.14"
       - "pipeline-utility-steps:2.13.0"
+      - "build-discarder:60.v1747b0eb632a"
