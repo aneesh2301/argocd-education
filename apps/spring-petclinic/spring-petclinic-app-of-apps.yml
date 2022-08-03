@@ -16,8 +16,6 @@ spec:
     path: argocd
     repoURL: https://github.com/SergeyDz/spring-petclinic
     targetRevision: feature/jenkins-build
-    directory:
-      recurse: false
   syncPolicy:
     automated: 
       selfHeal: true
