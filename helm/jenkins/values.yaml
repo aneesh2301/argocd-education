@@ -7,7 +7,7 @@ jenkins:
       - "workflow-aggregator:590.v6a_d052e5a_a_b_5"
       - "git:4.11.3"
       - "configuration-as-code:1429.v09b_044a_c93de"
-      - "artifactory:3.10.5"
+      - "artifactory:3.17.0"
       - "blueocean:1.25.5"
       - "build-pipeline-plugin:1.5.8"
       - "pipeline-stage-view:2.24"
