@@ -40,7 +40,7 @@ scheduledPolicies:
       unencrypted volumes.
      mode:
       type: cloudtrail
-      role: CloudCustodian-QuickStart
+      role: c7n-iam-role
       events:
         - RunInstances
      filters:
