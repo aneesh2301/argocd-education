@@ -1,0 +1,89 @@
+image:
+  repository: cloudcustodian/c7n
+  pullPolicy: IfNotPresent
+
+scheduledPolicies: 
+- name: daily-policies
+  concurrencyPolicy: {}
+  schedule: "* * * * *"
+  failedJobsHistoryLimit: 10
+  successfulJobsHistoryLimit: 10
+  policies:
+   - name: ec2-require-non-public-and-encrypted-volumes
+     resource: aws.ec2
+     description: |
+      Provision a lambda and cloud watch event target
+      that looks at all new instances and terminates those with
+      unencrypted volumes.
+     mode:
+      type: cloudtrail
+      role: CloudCustodian-QuickStart
+      events:
+        - RunInstances
+     filters:
+      - type: ebs
+        key: Encrypted
+        value: false
+     actions:
+      - type: notify
+        to:
+          - event-user
+          - resource-creator
+          - sergey.dzyuban@gmail.com
+        owner_absent_contact:
+          - sergey.dzyuban@gmail.com
+        # which template for the email should we use
+        template: policy-template
+        transport:
+          type: sqs
+          region: us-east-1
+          queue: c7n-notifications
+- name: weekly-policies
+  description: foo
+  schedule: "* * * * *"
+  policies:
+  - name: tag-compliance
+    resource: aws.ec2
+    description: |
+      Schedule a resource that does not meet tag compliance policies to be stopped in four days. Note a separate policy using the`marked-for-op` filter is required to actually stop the instances after four days.
+    filters:
+     - State.Name: running
+     - "tag:Environment": absent
+     - or:
+       - "tag:OwnerContact": absent
+    actions:
+      - type: notify
+        to:
+          - event-user
+          - resource-creator
+          - sergey.dzyuban@gmail.com
+        owner_absent_contact:
+          - sergey.dzyuban@gmail.com
+        # which template for the email should we use
+        template: policy-template
+        transport:
+          type: sqs
+          region: us-east-1
+          queue: c7n-notifications
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: "cloud-custodian"
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+resources: {}
+
+envVars: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+          

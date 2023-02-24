@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: c7n
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: c7n
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: helm/cloud-custodian-cron
+    repoURL: https://github.com/SergeyDz/argocd-education
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
+  syncPolicy:
+    # automated: {}
+    syncOptions: 
+      - CreateNamespace=true
