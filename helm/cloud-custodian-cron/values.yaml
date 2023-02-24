@@ -13,9 +13,9 @@ serviceAccount:
   # -- Optional service account annotations
  
   annotations:
-    "eks.amazonaws.com/role-arn": "arn:aws:iam::154563028627:role/c7n-tutorial-role"
+    "eks.amazonaws.com/role-arn": "arn:aws:iam::154563028627:role/c7n-iam-role"
 
-  name: "cloud-custodian"
+  name: "c7n-service-account"
 
 # -- Optional pod annotations
 podAnnotations: {}
