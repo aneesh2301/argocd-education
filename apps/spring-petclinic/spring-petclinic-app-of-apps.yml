@@ -17,8 +17,6 @@ spec:
     repoURL: https://github.com/SergeyDz/spring-petclinic
     targetRevision: feature/jenkins-build
   syncPolicy:
-    automated: 
-      selfHeal: true
-      prune: true
+    # automated: {}
     syncOptions: 
       - CreateNamespace=true
