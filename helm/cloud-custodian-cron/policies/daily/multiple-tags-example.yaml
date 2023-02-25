@@ -1,0 +1,13 @@
+- name: multiple-tags-example
+  comment: |
+    Tags any secrets missing either the Environment or ResourceOwner tag
+  resource: aws.ec2
+  filters:
+    - or:
+      - "tag:Environment": absent
+      - "tag:ResourceOwner": absent
+  actions:
+    - type: tag
+      tags:
+        Environment: Staging
+        ResourceOwner: Avengers
