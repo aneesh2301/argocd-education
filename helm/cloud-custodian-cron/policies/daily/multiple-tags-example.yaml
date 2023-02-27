@@ -9,5 +9,5 @@
   actions:
     - type: tag
       tags:
-        Environment: Staging
-        ResourceOwner: Avengers
+        Environment: Dev
+        ResourceOwner: Sergii Dziuban
