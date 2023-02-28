@@ -16,6 +16,4 @@
       transport:
         type: sqs
         queue: https://sqs.us-east-1.amazonaws.com/154563028627/c7n
-        role: arn:aws:iam::154563028627:role/c7n-iam-role
-        from_address: sergey.dzyuban@gmail.com
         region: us-east-1
