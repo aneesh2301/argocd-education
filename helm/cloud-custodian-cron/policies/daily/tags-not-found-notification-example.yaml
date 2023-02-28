@@ -15,5 +15,5 @@
         - sergey.dzyuban@gmail.com
       transport:
         type: sqs
-        queue: https://sqs.us-east-1.amazonaws.com/154563028627/c7n
         region: us-east-1
+        queue: c7n
