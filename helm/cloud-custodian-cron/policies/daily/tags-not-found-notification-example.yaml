@@ -1,4 +1,4 @@
-- name: multiple-tags-example
+- name: tags-not-found-notification-example
   comment: |
     Tags any secrets missing either the Environment or ResourceOwner tag
   resource: aws.ec2
