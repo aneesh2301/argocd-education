@@ -1,0 +1,20 @@
+- name: multiple-tags-example
+  comment: |
+    Tags any secrets missing either the Environment or ResourceOwner tag
+  resource: aws.ec2
+  filters:
+    - or:
+      - "tag:TestNotification": absent
+  actions:
+    - type: notify
+      subject: "Custodian Notification: [{{ account }}] [{{ region }}] [{{ policy }}"
+      violation_desc: "EC2 instance {{ account }}/{{ region }}/{{ resource_id }} is missing the tag TestNotification"
+      action_desc: |
+        EC2 instance {{ account }}/{{ region }}/{{ resource_id }} is missing the tag TestNotification
+        Please add the tag TestNotification to the instance
+      to:
+        - sergey.dzyuban@gmail.com
+      transport:
+        type: sqs
+        queue: https://sqs.us-east-1.amazonaws.com/154563028627/c7n
+        region: us-east-1
