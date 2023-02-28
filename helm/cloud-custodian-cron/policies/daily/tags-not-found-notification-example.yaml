@@ -7,10 +7,10 @@
       - "tag:TestNotification": absent
   actions:
     - type: notify
-      subject: "Custodian Notification: [{{ account }}] [{{ region }}] [{{ policy }}"
-      violation_desc: "EC2 instance {{ account }}/{{ region }}/{{ resource_id }} is missing the tag TestNotification"
+      subject: "Custodian Notification: Test tag is missing"
+      violation_desc: "EC2 instance is missing the tag TestNotification"
       action_desc: |
-        EC2 instance {{ account }}/{{ region }}/{{ resource_id }} is missing the tag TestNotification
+        EC2 instance is missing the tag TestNotification
         Please add the tag TestNotification to the instance
       to:
         - sergey.dzyuban@gmail.com
