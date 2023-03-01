@@ -1,0 +1,30 @@
+- name: root-user-login-detected
+  resource: account
+  description: |
+    Notifies Security and Cloud Admins teams on any AWS root user console logins
+  mode:
+      type: cloudtrail
+      role: CloudCustodian-QuickStart
+      events:
+        - ConsoleLogin
+  filters:
+      - type: event
+        key: "detail.userIdentity.type"
+        value_type: swap
+        op: in
+        value: Root
+  actions:
+    - type: notify
+      template: default.html
+      priority_header: 1
+      subject: "Root User Login Detected! - [custodian {{ account }} - {{ region }}]"
+      violation_desc: "A User Has Logged Into the AWS Console With The Root User:"
+      action_desc: |
+          "Please investigate and if needed revoke the root users session along
+          with any other restrictive actions if it's an unapproved root login"
+      to:
+        - sergey.dzyuban@gmail.com
+      transport:
+        type: sqs
+        queue: c7n
+        region: us-east-1
