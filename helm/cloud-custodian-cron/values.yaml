@@ -29,7 +29,7 @@ scheduledPolicies:
 - name: hourly-policies
   description: Run policies once per hour. For test purposes only it runs every minute.
   concurrencyPolicy: Replace
-  schedule: "* * * * *"
+  schedule: "*/10  * * * *"
   failedJobsHistoryLimit: 1
   successfulJobsHistoryLimit: 1
   policies: policies/daily/*.yaml
@@ -43,7 +43,7 @@ scheduledPolicies:
 
 - name: runtime-policies
   description: Runtime policies will create watch-cloudtrail lambda function to monitor cloudtrail events
-  schedule: "* * * * *"
+  schedule: "*/10  * * * *"
   failedJobsHistoryLimit: 1
   successfulJobsHistoryLimit: 1
   policies: policies/runtime/*.yaml
