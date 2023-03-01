@@ -1,0 +1,13 @@
+- name: purpose-tags-example
+  comment: |
+    Tags any secrets missing either the Environment or ResourceOwner tag
+  resource: aws.ec2
+  filters:
+    - or:
+      - "tag:Purpose": absent
+      - "tag:Owner": absent
+  actions:
+    - type: tag
+      tags:
+        Purpose: c7n test
+        Owner: Sergii Dziuban

@@ -26,7 +26,8 @@ podSecurityContext: {}
 securityContext: {}
 
 scheduledPolicies: 
-- name: daily-policies
+- name: hourly-policies
+  description: Run policies once per hour. For test purposes only it runs every minute.
   concurrencyPolicy: Replace
   schedule: "* * * * *"
   failedJobsHistoryLimit: 10
@@ -34,9 +35,18 @@ scheduledPolicies:
   policies: policies/daily/*.yaml
    
 - name: weekly-policies
-  description: foo
-  schedule: "* * * * *"
+  description: Run policies once per week.
+  failedJobsHistoryLimit: 10
+  successfulJobsHistoryLimit: 10
+  schedule: "0 0 * * 0"
   policies: policies/weekly/*.yaml
+
+- name: runtime-policies
+  description: Runtime policies will create watch-cloudtrail lambda function to monitor cloudtrail events
+  schedule: "* * * * *"
+  failedJobsHistoryLimit: 10
+  successfulJobsHistoryLimit: 10
+  policies: policies/runtime/*.yaml
 
 
 # -- Optional resources requests/limits

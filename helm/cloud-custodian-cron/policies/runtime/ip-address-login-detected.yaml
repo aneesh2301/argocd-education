@@ -4,6 +4,7 @@
     Notifies on all console logins
   mode:
       type: cloudtrail
+      role: CloudCustodian-QuickStart
       events:
         - ConsoleLogin
   filters: # regex to match any IP address
