@@ -76,7 +76,7 @@ args:
 
 persistence:
   # -- Persistence volume to save output & cache
-  enabled: true
+  enabled: false
   # -- Persistence volume extra labels
   extraLabels: {}
   # -- Persistence annotations
