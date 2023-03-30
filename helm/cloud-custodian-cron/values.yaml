@@ -76,7 +76,7 @@ args:
 
 persistence:
   # -- Persistence volume to save output & cache
-  enabled: false
+  enabled: true
   # -- Persistence volume extra labels
   extraLabels: {}
   # -- Persistence annotations
@@ -92,9 +92,9 @@ persistence:
 
 secret:
   # -- Use external secret for custodian instead of using Envars as secrets
-  enabled: false
+  enabled: true
   # -- secretName for custodian
-  secretName: ""
+  secretName: "custodian-aws-credentials"
   # -- secretName for custodian
   mountPath: /home/custodian/.aws
   # -- secretName readOnly
