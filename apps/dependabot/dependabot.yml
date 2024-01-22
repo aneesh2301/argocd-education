@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: 'https://dependabot-gitlab.gitlab.io/chart'
-    targetRevision: 0.2.1
+    targetRevision: 2.12.2
     chart: dependabot-gitlab
     helm:
       valueFiles:
