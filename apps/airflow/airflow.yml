@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: 'https://airflow-helm.github.io/charts'
-    targetRevision: 8.5.2
+    targetRevision: 8.8.0
     helm:
       valueFiles:
         - values.yaml
