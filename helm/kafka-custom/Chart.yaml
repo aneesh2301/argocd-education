@@ -25,5 +25,5 @@ appVersion: "16.0.0"
 
 dependencies:
 - name: kafka
-  version: "16.0.0"
+  version: "26.8.0"
   repository: "https://charts.bitnami.com/bitnami"
