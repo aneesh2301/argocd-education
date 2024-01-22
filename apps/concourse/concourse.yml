@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: 'https://concourse-charts.storage.googleapis.com/'
-    targetRevision: 16.0.0
+    targetRevision: 17.2.1
     chart: concourse
     helm:
       parameters:
