@@ -4,5 +4,6 @@ metadata:
   name: provider-azure-network
   annotations:
     argocd.argoproj.io/sync-wave: "5"
+  namespace: {{ .Release.Namespace }}
 spec:
   package: xpkg.upbound.io/upbound/provider-azure-network:v0.34.0

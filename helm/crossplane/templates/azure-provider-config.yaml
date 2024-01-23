@@ -3,6 +3,7 @@ metadata:
   name: default
   annotations:
     argocd.argoproj.io/sync-wave: "5"
+  namespace: {{ .Release.Namespace }}
 kind: ProviderConfig
 spec:
   credentials:
