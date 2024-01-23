@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane-core
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: crossplane
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: helm/crossplane-core
+    repoURL: https://github.com/SergeyDz/argocd-education
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
+  syncPolicy:
+    # automated: {}
+    syncOptions: 
+      - CreateNamespace=true

@@ -1,0 +1,9 @@
+apiVersion: azure.sergey.dzyuban.com/v1
+kind: Network
+metadata:
+  name: my-network
+  labels:
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  version: 1.2.3
