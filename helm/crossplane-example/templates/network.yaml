@@ -3,6 +3,8 @@ kind: Network
 metadata:
   name: my-network
   labels:
+    app: crossplane-example
+    chart: crossplane-example-0.1.0
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
