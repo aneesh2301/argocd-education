@@ -3,7 +3,7 @@ kind: Composition
 metadata: 
   name: network-provisioned.azure.sergey.dzyuban.com
   labels:
-    crossplane-network/enabled: true
+    crossplane-network/enabled: "true"
   annotations:
     crossplane-network/cloud: azure
 spec:
