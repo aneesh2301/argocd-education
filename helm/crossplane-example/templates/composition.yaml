@@ -1,5 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
+metadata:
+  name: nested-network-composition
 spec:
   resources:
     - name: nested-network-composition
