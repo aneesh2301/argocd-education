@@ -1,27 +1,49 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
-metadata:
-  name: nested-network-composition
+metadata: 
+  name: network-provisioned.azure.sergey.dzyuban.com
+  labels:
+    crossplane-network/enabled: true
+  annotations:
+    crossplane-network/cloud: azure
 spec:
+  compositeTypeRef:
+    apiVersion: azure.sergey.dzyuban.com/v1
+    kind: XNetwork
   resources:
-    - name: nested-network-composition
-      base:
-        apiVersion: aws.platformref.upbound.io/v1alpha1
-        kind: XNetwork
-    - name: aks-network
-      base:
+    - base:
         apiVersion: network.azure.upbound.io/v1beta1
         kind: VirtualNetwork
-        name: aks-network
+        name: my-first-network
         metadata:
           labels:
-            type: aks
+            type: backend
         spec:
           forProvider:
             addressSpace:
-              - 10.10.0.0/16
+              - 10.1.0.0/16
             location: "Sweden Central"
             resourceGroupName: k8s
-  compositeTypeRef:
-    apiVersion: aws.platformref.upbound.io/v1alpha1
-    kind: XAKSNetwork
+    - base:
+        apiVersion: network.azure.upbound.io/v1beta1
+        kind: VirtualNetwork
+        name: my-second-network
+        metadata:
+          labels:
+            type: internet
+        spec:
+          forProvider:
+            addressSpace:
+              - 10.2.0.0/16
+            location: "Sweden Central"
+            resourceGroupName: k8s
+    - base:
+        apiVersion: network.azure.upbound.io/v1beta1
+        kind: VirtualNetwork
+        name: my-gateway
+        spec:
+          forProvider:
+            addressSpace:
+              - 10.3.0.0/16
+            location: "Sweden Central"
+            resourceGroupName: k8s
