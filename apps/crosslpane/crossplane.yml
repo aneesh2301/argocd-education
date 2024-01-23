@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: crossplane-example
+  name: crossplane-core
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: crossplane-example
+    namespace: crossplane
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm/crossplane-example
+    path: helm/crossplane
     repoURL: https://github.com/SergeyDz/argocd-education
     targetRevision: HEAD
     helm:
