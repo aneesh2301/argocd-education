@@ -22,3 +22,6 @@ spec:
               - 10.10.0.0/16
             location: "Sweden Central"
             resourceGroupName: k8s
+  compositeTypeRef:
+    apiVersion: aws.platformref.upbound.io/v1alpha1
+    kind: XAKSNetwork
