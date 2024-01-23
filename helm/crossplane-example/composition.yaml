@@ -1,0 +1,45 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: Network
+spec:
+  resources:
+    - base:
+        apiVersion: network.azure.upbound.io/v1beta1
+        kind: VirtualNetwork
+        name: my-first-network
+        metadata:
+          labels:
+            type: backend
+        spec:
+          forProvider:
+            addressSpace:
+              - 10.1.0.0/16
+            location: "Sweden Central"
+            resourceGroupName: k8s
+    - base:
+        apiVersion: network.azure.upbound.io/v1beta1
+        kind: VirtualNetwork
+        name: my-second-network
+        metadata:
+          labels:
+            type: internet
+        spec:
+          forProvider:
+            addressSpace:
+              - 10.2.0.0/16
+            location: "Sweden Central"
+            resourceGroupName: k8s
+    - base:
+        apiVersion: network.azure.upbound.io/v1beta1
+        kind: VirtualNetwork
+        name: my-gateway
+        spec:
+          forProvider:
+            addressSpace:
+              - 10.3.0.0/16
+            location: "Sweden Central"
+            resourceGroupName: k8s
+  compositeTypeRef:
+    apiVersion: aws.platformref.upbound.io/v1alpha1
+    kind: XNetwork
