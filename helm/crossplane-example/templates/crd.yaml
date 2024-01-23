@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata: 
-  name: network.azure.sergey.dzyuban.com
+  name: xnetwork.azure.sergey.dzyuban.com
 spec:
   group: azure.sergey.dzyuban.com
   names:
@@ -11,7 +11,7 @@ spec:
     kind: Network
     plural: network
   defaultCompositionRef:
-    name: network.azure.sergey.dzyuban.com
+    name: network-provisioned.azure.sergey.dzyuban.com
   versions: 
   - name: v1
     served: true
