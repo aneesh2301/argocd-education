@@ -6,6 +6,7 @@ metadata:
     crossplane-network/enabled: "true"
   annotations:
     crossplane-network/cloud: azure
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   compositeTypeRef:
     apiVersion: azure.sergey.dzyuban.com/v1

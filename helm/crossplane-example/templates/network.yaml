@@ -8,5 +8,7 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   version: 1.2.3
