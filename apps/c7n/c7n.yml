@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: helm/cloud-custodian-cron
-    repoURL: https://github.com/SergeyDz/argocd-education
+    repoURL: https://github.com/aneesh2301/argocd-education
     targetRevision: HEAD
     helm:
       valueFiles:

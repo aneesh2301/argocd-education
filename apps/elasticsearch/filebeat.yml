@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: helm/filebeat-custom
-    repoURL: https://github.com/SergeyDz/argocd-education
+    repoURL: https://github.com/aneesh2301/argocd-education
     targetRevision: HEAD
     helm:
       valueFiles:
