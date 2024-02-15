@@ -14,7 +14,7 @@ spec:
   project: default
   source:
     path: apps
-    repoURL: https://github.com/aneesh2301/argocd-education
+    repoURL: https://github.com/SergeyDz/argocd-education
     targetRevision: HEAD
     directory:
       recurse: true
