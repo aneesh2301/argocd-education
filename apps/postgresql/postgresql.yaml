@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: registry-1.docker.io/bitnamicharts
+    repoURL: registry-1.docker.io/bitnami
     targetRevision: 14.1.1
     chart: postgresql
   syncPolicy:
