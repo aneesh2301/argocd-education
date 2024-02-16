@@ -12,8 +12,11 @@ spec:
   project: default
   source:
     repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: latest
+    targetRevision: 14.1.6
     chart: postgresql
+    helm:
+      valueFiles:
+        - values.yaml
   syncPolicy:
     # automated: {}
     syncOptions: 
