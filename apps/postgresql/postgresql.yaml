@@ -11,9 +11,12 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: 'https://charts.bitnami.com/bitnami'
-    targetRevision: 14.0.5
-    chart: postgresql
+  helm:
+    charts: 
+      - name: postgresql
+        version: 14.0.5
+        repository: https://charts.bitnami.com/bitnami
+
    syncPolicy:
     # automated: {}
     syncOptions: 
